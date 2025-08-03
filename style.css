@@ -1,0 +1,102 @@
+body {
+  font-family: 'Comic Neue', cursive;
+  background: linear-gradient(to right, #ffe29f, #ffa99f);
+  padding: 30px;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: #fff8dc;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #ff6f61;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-group input,
+.input-group select {
+  padding: 12px;
+  font-size: 16px;
+  border: 2px dashed #ff6f61;
+  border-radius: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 18px;
+  background-color: #ffcc70;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #ffa940;
+}
+
+button.delete {
+  background: #f7797d;
+  color: white;
+}
+
+button.delete:hover {
+  background: #e74c3c;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff2e6;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 2px solid #ffe29f;
+  border-radius: 12px;
+}
+
+li.done span.task-text {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.priority {
+  margin-left: 10px;
+  font-size: 14px;
+  padding: 3px 6px;
+  border-radius: 8px;
+}
+
+.Low {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.Medium {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.High {
+  background-color: #f8d7da;
+  color: #721c24;
+}

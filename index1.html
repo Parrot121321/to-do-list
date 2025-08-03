@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kid's To-Do App 🧸</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>🎈 My Fun Task List 🐥</h1>
+    
+    <div class="input-group">
+      <input type="text" id="taskInput" placeholder="✏️ Write your task here..." />
+      <select id="prioritySelect" title="Select task priority">
+        <option value="Low">🐢 Easy</option>
+        <option value="Medium">🐰 Medium</option>
+        <option value="High">🐯 Important</option>
+      </select>
+      <button id="addBtn" type="button">➕ Add</button>
+    </div>
+
+    <ul id="taskList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
