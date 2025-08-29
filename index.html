@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>to do list</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>to do list</h1>
+    <button id="themeToggle" type="button" title="Toggle Dark Mode" aria-label="Toggle Dark Mode">🌓</button>
+  </header>
+
+  <main class="container" id="app" aria-live="polite">
+    <section class="panel add-task" aria-labelledby="addTaskTitle">
+      <h2 id="addTaskTitle">Add Task</h2>
+      <form id="taskForm" autocomplete="off">
+        <input id="taskTitle" type="text" placeholder="What do you need to do?" required />
+        <input id="taskDue" type="date" title="Due date" placeholder="Due date" />
+        <select id="taskPriority" aria-label="Priority">
+          <option value="normal" selected>Priority: Normal</option>
+          <option value="high">Priority: High</option>
+          <option value="low">Priority: Low</option>
+        </select>
+        <button type="submit" class="primary">Add</button>
+      </form>
+    </section>
+
+    <section class="panel controls" aria-labelledby="controlsTitle">
+      <h2 id="controlsTitle" class="sr-only">Controls</h2>
+      <div class="search-wrap">
+        <input id="search" type="search" placeholder="Search tasks…" />
+      </div>
+      <div class="filters" role="tablist" aria-label="Filter tasks">
+        <button class="filter is-active" type="button" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter" type="button" data-filter="active" role="tab" aria-selected="false">Active</button>
+        <button class="filter" type="button" data-filter="completed" role="tab" aria-selected="false">Completed</button>
+      </div>
+      <div class="bulk-actions">
+        <button id="completeAll" type="button" title="Mark all as complete">Complete All</button>
+        <button id="clearCompleted" type="button" title="Clear completed">Clear Completed</button>
+        <button id="deleteAll" type="button" class="danger" title="Delete all tasks">Delete All</button>
+      </div>
+    </section>
+
+    <section class="panel list" aria-labelledby="listTitle">
+      <div class="list-header">
+        <h2 id="listTitle">Your Tasks</h2>
+        <span id="count" class="muted">0 items</span>
+      </div>
+      <ul id="taskList"></ul>
+      <p id="emptyState" class="muted">No tasks yet. Add one above ✨</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Built with HTML • CSS • JS — LocalStorage, Drag & Drop, Accessible</small>
+  </footer>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
