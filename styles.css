@@ -1,0 +1,123 @@
+:root{
+  --bg: #0f172a;          
+  --panel: #111827;      
+  --muted: #94a3b8;       
+  --text: #e5e7eb;       
+  --primary: #3b82f6;     
+  --primary-contrast: #ffffff;
+  --ok: #10b981;         
+  --warn: #f59e0b;        
+  --danger: #ef4444;     
+  --border: #1f2937;     
+  --shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+
+.light{
+  --bg: #f8fafc;         
+  --panel: #ffffff;
+  --muted: #64748b;       
+  --text: #0f172a;        
+  --border: #e5e7eb;      
+  --shadow: 0 8px 20px rgba(2,6,23,.08);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height:1.45;
+}
+
+.sr-only{position:absolute;left:-9999px}
+
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 20px;border-bottom:1px solid var(--border);background:var(--panel);
+  position:sticky;top:0;z-index:10;
+}
+.topbar h1{margin:0;font-size:1.35rem;letter-spacing:0.2px}
+.topbar button{
+  border:1px solid var(--border);background:transparent;color:var(--text);
+  padding:8px 10px;border-radius:12px;cursor:pointer
+}
+
+.container{max-width:880px;margin:28px auto;padding:0 16px}
+
+.panel{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  padding:16px;
+  margin-bottom:18px;
+}
+
+.add-task form{
+  display:grid;gap:10px;
+  grid-template-columns: 1fr 160px 170px 110px;
+}
+.add-task input[type="text"]{padding:12px;border:1px solid var(--border);border-radius:12px;background:transparent;color:var(--text)}
+.add-task input[type="date"], .add-task select{
+  padding:12px;border:1px solid var(--border);border-radius:12px;background:transparent;color:var(--text)
+}
+.primary{
+  background:var(--primary);color:var(--primary-contrast);border:0;border-radius:12px;
+  padding:12px 14px;font-weight:600;cursor:pointer
+}
+
+.controls{display:grid;gap:12px}
+.search-wrap input{
+  width:100%;padding:12px;border:1px solid var(--border);border-radius:12px;background:transparent;color:var(--text)
+}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filters .filter{
+  padding:8px 12px;border:1px solid var(--border);background:transparent;color:var(--text);
+  border-radius:999px;cursor:pointer
+}
+.filters .is-active{background:var(--primary);border-color:var(--primary);color:var(--primary-contrast)}
+.bulk-actions{display:flex;gap:8px;flex-wrap:wrap}
+.bulk-actions button{
+  padding:8px 12px;border:1px solid var(--border);background:transparent;color:var(--text);border-radius:10px;cursor:pointer
+}
+.bulk-actions .danger{border-color:var(--danger);color:var(--danger)}
+
+.list-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.muted{color:var(--muted)}
+
+#taskList{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.task{
+  display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;
+  padding:12px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,0.02)
+}
+.task.dragging{opacity:.5}
+.checkbox{width:20px;height:20px}
+.title-wrap{display:flex;flex-direction:column;gap:6px}
+.title{
+  font-size:1rem;outline:0;border:0;background:transparent;color:var(--text);
+}
+.title[contenteditable="true"]{border-bottom:1px dashed var(--border)}
+.meta{display:flex;gap:8px;flex-wrap:wrap;font-size:.85rem}
+.badge{padding:2px 8px;border:1px solid var(--border);border-radius:999px}
+.badge.high{border-color:var(--danger);color:var(--danger)}
+.badge.low{border-color:var(--ok);color:var(--ok)}
+.badge.dueSoon{border-color:var(--warn);color:var(--warn)}
+
+.actions{display:flex;gap:8px}
+.icon-btn{
+  border:1px solid var(--border);background:transparent;color:var(--text);
+  border-radius:10px;padding:6px 10px;cursor:pointer
+}
+.icon-btn.danger{border-color:var(--danger);color:var(--danger)}
+.icon-btn.ok{border-color:var(--ok);color:var(--ok)}
+
+.completed .title{text-decoration:line-through;opacity:.7}
+
+.footer{opacity:.7;text-align:center;padding:18px 0}
+
+@media (max-width: 760px){
+  .add-task form{grid-template-columns:1fr 1fr;grid-auto-rows:auto}
+  .add-task select, .add-task input[type="date"], .add-task .primary{width:100%}
+}
